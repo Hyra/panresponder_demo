@@ -31,7 +31,8 @@ class panresponder_demo extends Component {
       onMoveShouldSetPanResponderCapture: () => true,
 
       onPanResponderGrant: (e, gestureState) => {
-        this.state.pan.setValue({x: 0, y: 0});
+        // Set the initial value to the current state
+        this.state.pan.setOffset({x: this.state.pan.x._value, y: this.state.pan.y._value});
       },
 
       // When we drag/pan the object, set the delate to the states pan position
@@ -40,6 +41,8 @@ class panresponder_demo extends Component {
       ]),
 
       onPanResponderRelease: (e, {vx, vy}) => {
+        // Flatten the offset to avoid erratic behavior
+        this.state.pan.flattenOffset();
       }
     });
   }
