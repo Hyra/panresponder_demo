@@ -9,23 +9,15 @@ import React, {
   Component,
   StyleSheet,
   Text,
-  View
+  View,
+  Image // we want to use an image
 } from 'react-native';
 
 class panresponder_demo extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Image source={require('./assets/panresponder.png')} />
       </View>
     );
   }
